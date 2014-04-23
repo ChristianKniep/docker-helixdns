@@ -12,6 +12,8 @@ RUN ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 # Set (very simple) password for root
 RUN echo "root:root"|chpasswd
 
+### ENV BELOW
+
 ## supervisord
 RUN yum install -y supervisor 
 RUN mkdir -p /var/log/supervisor
