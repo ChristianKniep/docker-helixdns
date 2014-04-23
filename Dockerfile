@@ -19,16 +19,10 @@ RUN yum install -y supervisor
 RUN mkdir -p /var/log/supervisor
 RUN sed -i -e 's/nodaemon=false/nodaemon=true/' /etc/supervisord.conf
 
-## etcd
-ADD yum-cache/qnib-etcd-0.3.0-20140423.2.x86_64.rpm /tmp/
-RUN yum install -y /tmp/qnib-etcd-0.3.0-20140423.2.x86_64.rpm
-RUN rm -f /tmp/qnib-etcd-0.3.0-20140423.2.x86_64.rpm
+### ETCD INST BELOW
 ADD etc/supervisord.d/etcd.ini /etc/supervisord.d/etcd.ini
 
-## helicdns
-ADD yum-cache/qnib-helixdns-1.0.0-20140423.2.x86_64.rpm /tmp/
-RUN yum install -y /tmp/qnib-helixdns-1.0.0-20140423.2.x86_64.rpm
-RUN rm -f /tmp/qnib-helixdns-1.0.0-20140423.2.x86_64.rpm
+### HELIXDNS INST BELOW
 ADD etc/supervisord.d/helixdns.ini /etc/supervisord.d/helixdns.ini
 
 CMD /bin/supervisord -c /etc/supervisord.conf
