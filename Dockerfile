@@ -29,5 +29,6 @@ ADD etc/supervisord.d/etcd.ini /etc/supervisord.d/etcd.ini
 ADD yum-cache/qnib-helixdns-1.0.0-20140423.2.x86_64.rpm /tmp/
 RUN yum install -y /tmp/qnib-helixdns-1.0.0-20140423.2.x86_64.rpm
 RUN rm -f /tmp/qnib-helixdns-1.0.0-20140423.2.x86_64.rpm
+ADD etc/supervisord.d/helixdns.ini /etc/supervisord.d/helixdns.ini
 
 CMD /bin/supervisord -c /etc/supervisord.conf
