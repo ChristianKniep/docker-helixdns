@@ -9,6 +9,7 @@ MAINTAINER "Christian Kniep <christian@qnib.org>"
 RUN yum install -y supervisor 
 RUN mkdir -p /var/log/supervisor
 RUN sed -i -e 's/nodaemon=false/nodaemon=true/' /etc/supervisord.conf
+ADD root/bin/supervisor_daemonize.sh /root/bin/supervisor_daemonize.sh
 
 ### ETCD INST BELOW
 ADD yum-cache/qnib-etcd-0.3.0-20140423.2.x86_64.rpm /tmp/
