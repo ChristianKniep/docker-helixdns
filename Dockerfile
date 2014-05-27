@@ -24,9 +24,7 @@ ADD root/bin/startup.sh /root/bin/
 ADD etc/supervisord.d/startup.ini /etc/supervisord.d/
 
 # setup
-ADD root/bin/setup.sh /root/bin/
 ADD root/dns.aliases root/dns.aliases
-ADD etc/supervisord.d/setup.ini /etc/supervisord.d/setup.ini
 
 # ipv6 messes up with me
 RUN echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
