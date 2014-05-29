@@ -2,7 +2,7 @@
 # A docker image that includes
 # - etcd
 # - helixdns
-FROM qnib/etcd
+FROM qnib-etcd
 MAINTAINER "Christian Kniep <christian@qnib.org>"
 
 ### HELIXDNS INST BELOW
