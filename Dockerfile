@@ -26,7 +26,8 @@ ADD etc/supervisord.d/startup.ini /etc/supervisord.d/
 # setup
 ADD root/dns.aliases root/dns.aliases
 
-# ipv6 messes up with me
-RUN echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
+## Setup with delay of 5 sec
+ADD etc/supervisord.d/setup.ini /etc/supervisord.d/setup.ini
+ADD root/bin/setup.sh /root/bin/setup.sh
 
 CMD /bin/supervisord -c /etc/supervisord.conf
