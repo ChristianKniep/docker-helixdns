@@ -6,11 +6,11 @@ FROM qnib/etcd
 MAINTAINER "Christian Kniep <christian@qnib.org>"
 
 ### HELIXDNS INST BELOW
-ADD yum-cache/qnib-helixdns-1.0.1-20140424.1.x86_64.rpm /tmp/
-RUN yum install -y /tmp/qnib-helixdns-1.0.1-20140424.1.x86_64.rpm
-RUN rm -f /tmp/qnib-helixdns-1.0.1-20140424.1.x86_64.rpm
+ADD yum-cache/bullx-helixdns-1.0.1-20140704.1.x86_64.rpm /tmp/
+RUN yum install -y /tmp/bullx-helixdns-1.0.1-20140704.1.x86_64.rpm
+RUN rm -f /tmp/bullx-helixdns-1.0.1-20140704.1.x86_64.rpm
 
-RUN yum install -y bind-utils
+RUN yum install -y bind-utils python-dns python-pydns
 
 # supervisord
 ADD etc/supervisord.d/etcd.ini /etc/supervisord.d/etcd.ini
