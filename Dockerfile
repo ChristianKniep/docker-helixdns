@@ -23,15 +23,6 @@ ADD etc/supervisord.d/startup.ini /etc/supervisord.d/
 # setup
 ADD root/dns.aliases root/dns.aliases
 
-# python-etcd
-ADD yum-cache/pyetcd/ /tmp/yum-cache/pyetcd/
-RUN yum install -y /tmp/yum-cache/pyetcd/python-cryptography-0.2.2-1.x86_64.rpm
-RUN yum install -y /tmp/yum-cache/pyetcd/python-pyopenssl-0.13.1-1.x86_64.rpm
-RUN yum install -y python-urllib3-1.7-4.fc20.noarch
-RUN yum install -y python-requests
-RUN yum install -y /tmp/yum-cache/pyetcd/python-etcd-0.3.0-1.noarch.rpm
-RUN rm -rf /tmp/yum-cache/pyetcd
-
 ## Setup with delay of 5 sec
 ADD etc/supervisord.d/setup.ini /etc/supervisord.d/setup.ini
 ADD root/bin/setup.sh /root/bin/setup.sh
