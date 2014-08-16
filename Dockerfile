@@ -8,7 +8,7 @@ MAINTAINER "Christian Kniep <christian@qnib.org>"
 ### HELIXDNS INST BELOW
 RUN echo "20140816.1"; yum clean all; yum install -y qnib-helixdns
 
-RUN yum install -y bind-utils
+RUN yum install -y bind-utils python-dns python-pydns
 
 # supervisord
 ADD etc/supervisord.d/helixdns.ini /etc/supervisord.d/helixdns.ini
